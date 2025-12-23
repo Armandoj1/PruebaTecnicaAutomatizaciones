@@ -57,12 +57,12 @@ https://id-preview--fc6f0905-77f0-4926-880e-376ca8810bc8.lovable.app/?__lovable_
 
 ### Backend
 
-cd Backend
-npm install
-npm start
+- cd Backend
+- npm install
+- npm start
 
 ### FrontEnd
 
-npm install 
-npm run dev
+- npm install 
+- npm run dev
 
