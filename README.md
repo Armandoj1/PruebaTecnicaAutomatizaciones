@@ -1,74 +1,68 @@
-# Welcome to your Lovable project
+# Automatización y Mapeo de Temarios con IA
 
-## Project info
+Prueba técnica orientada a automatizar la relación entre temarios oficiales
+de oposiciones (SAS, Generalitat, etc.) y un temario interno de una academia,
+incluyendo validación humana (Human-in-the-loop) por parte de un profesor.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+---
 
-## How can I edit this code?
+## Descripción general
 
-There are several ways of editing your application.
+El sistema permite que un alumno solicite la relación de temarios para una
+oposición específica.  
+Si la relación no existe, se genera automáticamente mediante IA, pasa por
+un proceso de revisión por parte de un profesor y se notifica al alumno
+una vez aprobada o rechazada.
 
-**Use Lovable**
+---
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+## Arquitectura de la solución
 
-Changes made via Lovable will be committed automatically to this repo.
+- **Frontend**: diseño inicial realizado en **Lovable**, utilizado para definir
+  la experiencia de usuario y el flujo visual. El proyecto fue exportado y
+  ajustado en local para permitir la integración con el backend durante las pruebas.
+- **Backend**: entorno local en **Node.js**, utilizado para validar la lógica
+  del workflow, las peticiones HTTP y el manejo de estados.
+- **Base de datos**: modelo relacional orientado a trazabilidad, control de
+  estados, reintentos y auditoría del proceso.
 
-**Use your preferred IDE**
+---
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## Workflow
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+El workflow contempla:
+- generación automática de la relación de temarios mediante IA
+- validación humana por parte del profesor
+- control de estados del proceso
+- manejo de errores y reintentos
+- registro de métricas y eventos del sistema
 
-Follow these steps:
+---
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+## Documentación
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+- Documento PDF con capturas del workflow y del esquema de base de datos.
+- Video explicativo donde se detallan las decisiones técnicas y los ajustes
+  realizados durante la implementación.
 
-# Step 3: Install the necessary dependencies.
-npm i
+Video explicativo:  
+https://youtu.be/BrgQ2FIB0qk
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+Proyecto Visual en Lovable (Uso para el desarrollo del front)
+https://id-preview--fc6f0905-77f0-4926-880e-376ca8810bc8.lovable.app/?__lovable_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMGNrNm1JQ3Q4RlNmOWxqMHlsc3VERGdhVE16MiIsInByb2plY3RfaWQiOiJmYzZmMDkwNS03N2YwLTQ5MjYtODgwZS0zNzZjYTg4MTBiYzgiLCJub25jZSI6IjUyMzNkNDFmMDc1ZWM0ODc4OWFjZDllM2VkMTA4MTU2IiwiaXNzIjoibG92YWJsZS1hcGkiLCJzdWIiOiJmYzZmMDkwNS03N2YwLTQ5MjYtODgwZS0zNzZjYTg4MTBiYzgiLCJhdWQiOlsibG92YWJsZS1hcHAiXSwiZXhwIjoxNzY3MTA5OTkzLCJuYmYiOjE3NjY1MDUxOTMsImlhdCI6MTc2NjUwNTE5M30.upF37q1mcRa-i-0OTw29dqnlMPhSSUTiVg8zaYX2XrY
+
+---
+
+## Ejecución local
+
+### Backend
+
+cd Backend
+npm install
+npm start
+
+### FrontEnd
+
+npm install 
 npm run dev
-```
 
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
-# PruebaTecnicaAutomatizaciones
